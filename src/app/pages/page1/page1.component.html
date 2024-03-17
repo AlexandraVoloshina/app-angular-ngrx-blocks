@@ -1,0 +1,12 @@
+<div class="main-block">
+    <div class="block" *ngFor="let block of blocks$ | async">
+        <h2>Title: {{ block.title.split(' ')[0] }}</h2>
+        <p class="text-italic">Subtitle: {{ block.title.split(' ')[0] + block.title.split(' ')[1] }}</p>
+        <p>{{ block.title }}</p>
+    </div>
+</div>
+  
+<div (scroll)="onScroll()">
+<!-- Placeholder for the last block to trigger loading of more blocks -->
+    <div *ngIf="!!blocks$" style="height: 1px;"></div>
+</div>

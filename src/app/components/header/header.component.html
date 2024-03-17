@@ -1,0 +1,5 @@
+<mat-toolbar color="primary">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+    <a *ngIf="this.loginService.isAuthSig()" mat-button routerLink="/page1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Page1</a>
+    <a *ngIf="this.loginService.isAuthSig()" mat-button routerLink="/page2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Page2</a>
+</mat-toolbar>

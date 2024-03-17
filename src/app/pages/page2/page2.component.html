@@ -1,0 +1,7 @@
+<mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange($event)"></mat-calendar>
+<div *ngIf="currentBlock$ | async as currentBlock">
+    <h2>Block Details</h2>
+    <p>ID: {{ currentBlock.id }}</p>
+    <p>Title: {{ currentBlock.title }}</p>
+    <p>Body: {{ currentBlock.body }}</p>
+</div>

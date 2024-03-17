@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field>
+      <input matInput formControlName="email" type="email" placeholder="Email">
+      <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        Please enter a valid email
+      </mat-error>
+      <mat-error *ngIf="errorEmail">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput formControlName="password" type="password" placeholder="Password">
+      <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button [disabled]="loginForm.invalid">Login</button>
+  </form>
